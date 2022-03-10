@@ -135,7 +135,7 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
@@ -146,6 +146,13 @@
      <canvas id="myCanvas" width="600" height="500" style="border:3px dotted #000000;"></canvas>
 <!-- this code displays blank canvas to be 400*300 in dimensions; ID gives name to function -->
 <!-- border specified; dotted rather solid -->
+      <script>
+        var canvas = document.getElementById('myCanvas2');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Calibri';
+        context.fillStyle = "black";
+        context.fillText("Processed image appears here", 10, 20);
+      </script>
      
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
