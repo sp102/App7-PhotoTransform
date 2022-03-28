@@ -108,11 +108,11 @@
         var imageData = context.getImageData(x, y, imageObj.width, imageObj.height);
         var data = imageData.data;
          
-  for(var i = 0; i < data.length; i += 4) {
+        for(var i = 0; i < data.length; i += 4) {
    
-        data[i] = 0;
+            data[i] = 0;
     
-        data[i + 1] = 0;
+            data[i + 1] = 0;
    
         }
 
@@ -163,8 +163,8 @@
 <!-- this code displays blank canvas to be 400*300 in dimensions; ID gives name to function -->
 <!-- border specified; dotted rather solid -->
       <script>
-       var canvas2 = document.getElementById('myCanvas2');
-       var context2 = canvas2.getContext("2d");
+        var canvas2 = document.getElementById('myCanvas2');
+        var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
         context2.fillText("Processed image appears here", 10, 20);
