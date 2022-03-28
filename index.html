@@ -117,7 +117,12 @@
         // pick out pixel data from 
          
         // overwrite original image
-        context2.putImageData(imageData, 0, 0);    
+        context2.putImageData(imageData, 0, 0);  
+         
+         var imageObj = new Image()
+         imageObj.onload = function() {
+           drawImage(this)
+         }
       
         } // end of img.onload
         
