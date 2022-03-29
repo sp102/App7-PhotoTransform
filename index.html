@@ -104,19 +104,31 @@
      
         var canvas2 = document.getElementById('myCanvas2');
         var context2 = canvas2.getContext("2d");
+        // canvas2 indicates the 2nd canvas; id for second canvas so that it can be called
+        // 2d used to indicate canvas; 2 dimensional canvas
+        // This variable may not be necessary to have here; put it just in case so that the canvas2 can be retrieved
          
         var imageData = context.getImageData(0,0, canvas2.width, canvas2.height);
         var data = imageData.data;
+         // 0,0 instead of x,y used for canvas because x,y can show up as undefined variable
+         // canvas2 used instead of imageobj variable because canvas2 variable already defined and used to link things to canvas2
          
         for(var i = 0; i < data.length; i += 4) {
+         // for loop; iterates pixels row by row so that they can print onto second canvas
+         // i can be associated with pixels and colors 
    
             data[i] = 0;
+         // there are 4 colors/groups associated with pixels: red, green, blue, and alpha- each correlates with color (i is red, i+1 is green, etc)
+         // i is associated with red
+         // do not want red so set this data equal to 0; red now does not show up
     
             data[i + 1] = 0;
+         // [i + 1] is associated with green
+         // set this equal to 0 so that green pixels do not show up
+         // do not need to mess with blue pixels because will show up
+         // alpha pixels do not show color so no need to manipulate
    
         }
-
-        // pick out pixel data from 
          
         // overwrite original image
         context2.putImageData(imageData, 0, 0);  
@@ -158,10 +170,10 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
-
+<!-- myCanvas defines first canvas; variable created to retrieve canvas and font, etc. allows text to show up with specifications on canvas -->
+<!-- original text goes here message shows up on canvas before picture is loaded to indicate canvas purpose -->
+     
      <canvas id="myCanvas2" width="600" height="500" style="border:3px dotted #000000;"></canvas>
-<!-- this code displays blank canvas to be 400*300 in dimensions; ID gives name to function -->
-<!-- border specified; dotted rather solid -->
       <script>
         var canvas2 = document.getElementById('myCanvas2');
         var context2 = canvas2.getContext("2d");
@@ -169,6 +181,10 @@
         context2.fillStyle = "black";
         context2.fillText("Processed image appears here", 10, 20);
       </script>
+<!-- this code displays blank canvas to be 400*300 in dimensions; ID gives name to function -->
+<!-- border specified; dotted rather solid -->
+<!-- myCanvas2 defines 2nd canvas to be used -->
+<!-- processed image goes here words show up on second canvas to indicate function of second canvas -->
      
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
